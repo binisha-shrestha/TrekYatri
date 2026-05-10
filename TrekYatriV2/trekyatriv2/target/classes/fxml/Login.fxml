@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="login-container"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.trekyatri.controller.LoginController">
+
+    <VBox alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <!-- Title Section -->
+            <VBox alignment="CENTER" spacing="10.0">
+                <children>
+                    <Label fx:id="titleLabel" styleClass="login-title" text="TrekYatri">
+                        <font>
+                            <Font name="System Bold" size="48.0" />
+                        </font>
+                    </Label>
+                    <Label styleClass="login-title" text="Nepal Tourism Management System">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+
+            <!-- Login Form -->
+            <VBox alignment="CENTER" maxWidth="400.0" spacing="20.0" styleClass="login-form">
+                <children>
+                    <!-- Language Selection -->
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                        <children>
+                            <Label fx:id="languageLabel" styleClass="form-label" text="Language:" />
+                            <ComboBox fx:id="languageComboBox" onAction="#onLanguageChanged"
+                                      styleClass="elegant-combo" value="English">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="English" />
+                                        <String fx:value="नेपाली" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </children>
+                    </HBox>
+
+                    <Separator />
+
+                    <!-- Username Field -->
+                    <VBox spacing="8.0">
+                        <children>
+                            <Label fx:id="usernameLabel" styleClass="form-label" text="Username" />
+                            <TextField fx:id="usernameField" promptText="Enter your username"
+                                       styleClass="elegant-textfield" />
+                        </children>
+                    </VBox>
+
+                    <!-- Password Field -->
+                    <VBox spacing="8.0">
+                        <children>
+                            <Label fx:id="passwordLabel" styleClass="form-label" text="Password" />
+                            <PasswordField fx:id="passwordField" promptText="Enter your password"
+                                           styleClass="elegant-textfield" />
+                        </children>
+                    </VBox>
+
+                    <!-- Login Button -->
+                    <Button fx:id="loginButton" maxWidth="1.7976931348623157E308"
+                            onAction="#onLoginClicked" styleClass="login-button" text="Login">
+                        <font>
+                            <Font name="System Bold" size="16.0" />
+                        </font>
+                    </Button>
+
+                    <!-- Demo Credentials Info -->
+                    <VBox alignment="CENTER" spacing="5.0">
+                        <children>
+                            <Label styleClass="form-label" text="Demo Credentials:">
+                                <font>
+                                    <Font size="12.0" />
+                                </font>
+                            </Label>
+                            <Label text="Username: admin | Password: admin">
+                                <font>
+                                    <Font size="11.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                </padding>
+            </VBox>
+        </children>
+    </VBox>
+</AnchorPane>

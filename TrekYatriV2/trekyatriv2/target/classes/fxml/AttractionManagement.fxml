@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trekyatri.controller.AttractionController">
+
+    <VBox spacing="20.0" styleClass="main-content" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <!-- Attraction Form Section -->
+            <VBox spacing="15.0" styleClass="form-section">
+                <children>
+                    <Label styleClass="section-title" text="Attraction Information">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+
+                    <GridPane hgap="15.0" styleClass="form-grid" vgap="15.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <!-- Row 1 -->
+                            <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="form-label" text="Attraction ID" />
+                                    <TextField fx:id="attractionIdField" styleClass="form-textfield" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="form-label" text="Name" />
+                                    <TextField fx:id="attractionNameField" styleClass="form-textfield" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="form-label" text="Location" />
+                                    <TextField fx:id="locationField" styleClass="form-textfield" />
+                                </children>
+                            </VBox>
+
+                            <!-- Row 2 -->
+                            <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <children>
+                                    <Label styleClass="form-label" text="Type" />
+                                    <ComboBox fx:id="typeComboBox" maxWidth="1.7976931348623157E308"
+                                              styleClass="elegant-combo" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <children>
+                                    <Label styleClass="form-label" text="Difficulty" />
+                                    <ComboBox fx:id="difficultyComboBox" maxWidth="1.7976931348623157E308"
+                                              styleClass="elegant-combo" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                <children>
+                                    <Label styleClass="form-label" text="Altitude (meters)" />
+                                    <TextField fx:id="altitudeField" styleClass="form-textfield" />
+                                </children>
+                            </VBox>
+
+                            <!-- Row 3 -->
+                            <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                <children>
+                                    <Label styleClass="form-label" text="Price ($)" />
+                                    <TextField fx:id="priceField" styleClass="form-textfield" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="2">
+                                <children>
+                                    <Label styleClass="form-label" text="Description" />
+                                    <TextField fx:id="descriptionField" styleClass="form-textfield" />
+                                </children>
+                            </VBox>
+                        </children>
+                    </GridPane>
+
+                    <!-- Action Buttons -->
+                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                        <children>
+                            <Button fx:id="addButton" onAction="#onAddAttraction" styleClass="primary-button" text="Add Attraction" />
+                            <Button fx:id="updateButton" onAction="#onUpdateAttraction" styleClass="secondary-button" text="Update Attraction" />
+                            <Button fx:id="deleteButton" onAction="#onDeleteAttraction" styleClass="danger-button" text="Delete Attraction" />
+                            <Button fx:id="clearButton" onAction="#onClearFields" styleClass="neutral-button" text="Clear Fields" />
+                            <Button fx:id="altitudeCheckButton" onAction="#onAltitudeCheck" styleClass="warning-button" text="Altitude Check" />
+                        </children>
+                    </HBox>
+                </children>
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+            </VBox>
+
+            <!-- Weather and Search Section -->
+            <HBox spacing="20.0">
+                <children>
+                    <!-- Weather Info -->
+                    <VBox spacing="10.0" styleClass="weather-widget" HBox.hgrow="SOMETIMES">
+                        <children>
+                            <Label styleClass="form-label" text="Weather Information" />
+                            <Label fx:id="weatherLabel" text="Select an attraction to see weather" />
+                        </children>
+                        <padding>
+                            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                        </padding>
+                    </VBox>
+
+                    <!-- Search Section -->
+                    <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="search-section" HBox.hgrow="ALWAYS">
+                        <children>
+                            <Label styleClass="form-label" text="Search:" />
+                            <TextField fx:id="searchField" onKeyReleased="#onSearchKeyReleased"
+                                       promptText="Search by name, location, or description..."
+                                       styleClass="search-textfield" HBox.hgrow="ALWAYS" />
+                        </children>
+                        <padding>
+                            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                        </padding>
+                    </HBox>
+                </children>
+            </HBox>
+
+            <!-- Attraction Table Section -->
+            <VBox spacing="10.0" styleClass="table-section" VBox.vgrow="ALWAYS">
+                <children>
+                    <Label styleClass="section-title" text="Attraction List">
+                        <font>
+                            <Font name="System Bold" size="16.0" />
+                        </font>
+                    </Label>
+
+                    <TableView fx:id="attractionTable" styleClass="data-table" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="attractionIdColumn" prefWidth="100.0" text="ID" />
+                            <TableColumn fx:id="attractionNameColumn" prefWidth="150.0" text="Name" />
+                            <TableColumn fx:id="locationColumn" prefWidth="120.0" text="Location" />
+                            <TableColumn fx:id="typeColumn" prefWidth="100.0" text="Type" />
+                            <TableColumn fx:id="difficultyColumn" prefWidth="100.0" text="Difficulty" />
+                            <TableColumn fx:id="altitudeColumn" prefWidth="100.0" text="Altitude (m)" />
+                            <TableColumn fx:id="priceColumn" prefWidth="100.0" text="Price ($)" />
+                        </columns>
+                    </TableView>
+                </children>
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </VBox>
+        </children>
+    </VBox>
+</AnchorPane>

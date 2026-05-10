@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javax.print.DocFlavor.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.trekyatri.controller.LoginController"
+            prefHeight="400.0" prefWidth="600.0">
+
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="30.0" styleClass="login-container">
+            <children>
+                <!-- Logo and Title Section -->
+                <VBox alignment="CENTER" spacing="15.0">
+                    <children>
+
+                        <Label fx:id="titleLabel" styleClass="login-title" text="Trek Yatri Login">
+                            <font>
+                                <Font name="System Bold" size="32.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+                <!-- Login Form -->
+                <VBox alignment="CENTER" maxWidth="400.0" spacing="20.0" styleClass="login-form">
+                    <children>
+                        <!-- Language Selection -->
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label fx:id="languageLabel" styleClass="form-label" text="Language">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="languageComboBox" maxWidth="1.7976931348623157E308" onAction="#onLanguageChanged" prefHeight="40.0" styleClass="elegant-combo">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="English" />
+                                            <String fx:value="नेपाली" />
+                                        </FXCollections>
+                                    </items>
+                                    <value>
+                                        <String fx:value="English" />
+                                    </value>
+                                </ComboBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Username Field -->
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label fx:id="usernameLabel" styleClass="form-label" text="Username">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="usernameField" prefHeight="40.0" promptText="Enter your username" styleClass="elegant-textfield" />
+                            </children>
+                        </VBox>
+
+                        <!-- Password Field -->
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label fx:id="passwordLabel" styleClass="form-label" text="Password">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <PasswordField fx:id="passwordField" prefHeight="40.0" promptText="Enter your password" styleClass="elegant-textfield" />
+                            </children>
+                        </VBox>
+
+                        <!-- Login Button -->
+                        <Button fx:id="loginButton" maxWidth="1.7976931348623157E308" onAction="#onLoginClicked" prefHeight="45.0" styleClass="login-button" text="Login">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets left="20.0" right="20.0" top="20.0" >
+                            <bottom>20.0</bottom>
+                        </Insets>
+                    </padding>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+            </padding>
+        </VBox>
+
+    <stylesheets>
+        <URL value="@../css/login-styles.css" />
+    </stylesheets>
+
+
+</AnchorPane>

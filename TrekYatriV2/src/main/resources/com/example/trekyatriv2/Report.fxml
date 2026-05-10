@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trekyatri.controller.ReportController">
+
+    <VBox spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+
+        <!-- Report Title -->
+        <Label styleClass="report-title" text=" Analytics Dashboard">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <!-- Statistics Summary -->
+        <GridPane hgap="20.0" vgap="15.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="150.0" />
+            </columnConstraints>
+
+            <children>
+                <!-- Total Tourists -->
+                <VBox styleClass="stat-card" GridPane.columnIndex="0">
+                    <Label fx:id="totalTouristsLabel" styleClass="stat-value" text="Total Tourists: 0" />
+                    <Label styleClass="stat-label" text="Registered in system" />
+                </VBox>
+
+                <!-- Total Bookings -->
+                <VBox styleClass="stat-card" GridPane.columnIndex="1">
+                    <Label fx:id="totalBookingsLabel" styleClass="stat-value" text="Total Bookings: 0" />
+                    <Label styleClass="stat-label" text="Completed/Upcoming" />
+                </VBox>
+
+                <!-- Total Revenue -->
+                <VBox styleClass="stat-card" GridPane.columnIndex="2">
+                    <Label fx:id="totalRevenueLabel" styleClass="stat-value" text="Total Revenue: $0" />
+                    <Label styleClass="stat-label" text="All-time earnings" />
+                </VBox>
+
+                <!-- Popular Attraction -->
+                <VBox styleClass="stat-card" GridPane.columnIndex="3">
+                    <Label fx:id="popularAttractionLabel" styleClass="stat-value" text="Most Popular: -" />
+                    <Label styleClass="stat-label" text="By booking count" />
+                </VBox>
+            </children>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <!-- Charts Section -->
+        <HBox spacing="20.0" HBox.hgrow="ALWAYS">
+            <!-- Nationality Distribution Pie Chart -->
+            <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                <Label styleClass="chart-title" text="Tourist Nationality Distribution" />
+                <PieChart fx:id="nationalityChart" legendVisible="true" VBox.vgrow="ALWAYS" />
+            </VBox>
+
+            <!-- Attraction Popularity Bar Chart -->
+            <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+                <Label styleClass="chart-title" text="Attraction Popularity" />
+                <BarChart fx:id="attractionChart" legendVisible="false" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis fx:id="attractionXAxis" label="Attractions" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="attractionYAxis" label="Bookings" />
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </HBox>
+
+        <!-- Booking Status Chart -->
+        <VBox styleClass="chart-container" HBox.hgrow="ALWAYS">
+            <Label styleClass="chart-title" text="Booking Status Distribution" />
+            <PieChart fx:id="statusChart" legendVisible="true" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </VBox>
+
+</AnchorPane>

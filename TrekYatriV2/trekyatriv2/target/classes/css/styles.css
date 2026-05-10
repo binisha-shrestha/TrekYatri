@@ -1,0 +1,335 @@
+/* TrekYatri Tourism Management System Styles */
+
+/* Root Variables */
+.root {
+  -fx-font-family: "Segoe UI", Arial, sans-serif;
+  -fx-font-size: 14px;
+
+  /* Nepal-inspired Color Palette */
+  -fx-primary-color: #dc143c; /* Crimson Red from Nepal flag */
+  -fx-secondary-color: #003893; /* Blue from Nepal flag */
+  -fx-accent-color: #ff6b35; /* Warm orange */
+  -fx-success-color: #28a745;
+  -fx-warning-color: #ffc107;
+  -fx-danger-color: #dc3545;
+  -fx-light-color: #f8f9fa;
+  -fx-dark-color: #343a40;
+  -fx-background-color: #ffffff;
+  -fx-text-color: #212529;
+}
+
+/* Login Container */
+.login-container {
+  -fx-background-color: linear-gradient(135deg, #dc143c 0%, #003893 100%);
+  -fx-padding: 50px;
+}
+
+.login-title {
+  -fx-text-fill: white;
+  -fx-font-size: 32px;
+  -fx-font-weight: bold;
+}
+
+.login-form {
+  -fx-background-color: rgba(255, 255, 255, 0.95);
+  -fx-background-radius: 15px;
+  -fx-padding: 30px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+}
+
+.form-label {
+  -fx-text-fill: #343a40;
+  -fx-font-weight: bold;
+  -fx-font-size: 14px;
+}
+
+.elegant-textfield,
+.elegant-combo {
+  -fx-background-color: white;
+  -fx-border-color: #ced4da;
+  -fx-border-width: 1px;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-padding: 10px 15px;
+  -fx-font-size: 14px;
+}
+
+.elegant-textfield:focused,
+.elegant-combo:focused {
+  -fx-border-color: #dc143c;
+  -fx-border-width: 2px;
+  -fx-effect: dropshadow(gaussian, rgba(220, 20, 60, 0.3), 5, 0, 0, 0);
+}
+
+.login-button {
+  -fx-background-color: linear-gradient(45deg, #dc143c, #ff6b35);
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-font-size: 16px;
+  -fx-background-radius: 25px;
+  -fx-border-radius: 25px;
+  -fx-padding: 12px 30px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);
+}
+
+.login-button:hover {
+  -fx-background-color: linear-gradient(45deg, #b91c3c, #e55a2b);
+  -fx-scale-x: 1.05;
+  -fx-scale-y: 1.05;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+  -fx-background-color: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  -fx-padding: 30px;
+}
+
+.dashboard-title {
+  -fx-text-fill: #dc143c;
+  -fx-font-size: 36px;
+  -fx-font-weight: bold;
+}
+
+.dashboard-tagline {
+  -fx-text-fill: #6c757d;
+  -fx-font-size: 16px;
+  -fx-font-style: italic;
+}
+
+/* Management Form Styles */
+.main-content {
+  -fx-background-color: #f8f9fa;
+  -fx-padding: 20px;
+}
+
+.form-section {
+  -fx-background-color: white;
+  -fx-background-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.section-title {
+  -fx-text-fill: #dc143c;
+  -fx-font-size: 20px;
+  -fx-font-weight: bold;
+}
+
+.form-textfield {
+  -fx-background-color: white;
+  -fx-border-color: #dee2e6;
+  -fx-border-width: 1px;
+  -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
+  -fx-padding: 8px 12px;
+}
+
+.form-textfield:focused {
+  -fx-border-color: #dc143c;
+  -fx-border-width: 2px;
+}
+
+/* Button Styles */
+.primary-button {
+  -fx-background-color: #dc143c;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+.primary-button:hover {
+  -fx-background-color: #b91c3c;
+}
+
+.secondary-button {
+  -fx-background-color: #003893;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+.secondary-button:hover {
+  -fx-background-color: #002a6b;
+}
+
+.danger-button {
+  -fx-background-color: #dc3545;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+.danger-button:hover {
+  -fx-background-color: #c82333;
+}
+
+.neutral-button {
+  -fx-background-color: #6c757d;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+.neutral-button:hover {
+  -fx-background-color: #5a6268;
+}
+
+.warning-button {
+  -fx-background-color: #ffc107;
+  -fx-text-fill: #212529;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+.warning-button:hover {
+  -fx-background-color: #e0a800;
+}
+
+/* Table Styles */
+.data-table {
+  -fx-background-color: white;
+  -fx-border-color: #dee2e6;
+  -fx-border-width: 1px;
+  -fx-border-radius: 5px;
+}
+
+.data-table .column-header {
+  -fx-background-color: #dc143c;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-padding: 10px;
+}
+
+.data-table .table-row-cell {
+  -fx-background-color: white;
+  -fx-border-color: #f8f9fa;
+  -fx-border-width: 0 0 1px 0;
+}
+
+.data-table .table-row-cell:selected {
+  -fx-background-color: rgba(220, 20, 60, 0.1);
+  -fx-text-fill: #dc143c;
+}
+
+.data-table .table-row-cell:hover {
+  -fx-background-color: rgba(220, 20, 60, 0.05);
+}
+
+/* Search Section */
+.search-section {
+  -fx-background-color: white;
+  -fx-background-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.search-textfield {
+  -fx-background-color: #f8f9fa;
+  -fx-border-color: #dee2e6;
+  -fx-border-width: 1px;
+  -fx-border-radius: 20px;
+  -fx-background-radius: 20px;
+  -fx-padding: 10px 20px;
+}
+
+.search-textfield:focused {
+  -fx-border-color: #dc143c;
+  -fx-background-color: white;
+}
+
+/* Chart Styles */
+.chart-container {
+  -fx-background-color: white;
+  -fx-background-radius: 10px;
+  -fx-padding: 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.chart-title {
+  -fx-text-fill: #dc143c;
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+}
+
+/* Statistics Cards */
+.stat-card {
+  -fx-background-color: white;
+  -fx-background-radius: 10px;
+  -fx-padding: 20px;
+  -fx-alignment: center;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+}
+
+.stat-value {
+  -fx-text-fill: #dc143c;
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+}
+
+.stat-label {
+  -fx-text-fill: #6c757d;
+  -fx-font-size: 12px;
+}
+
+/* Festival Notification */
+.festival-notification {
+  -fx-background-color: linear-gradient(45deg, #ff6b35, #ffc107);
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 10px;
+  -fx-padding: 15px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+}
+
+/* Weather Widget */
+.weather-widget {
+  -fx-background-color: linear-gradient(135deg, #87ceeb, #4682b4);
+  -fx-text-fill: white;
+  -fx-background-radius: 10px;
+  -fx-padding: 15px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+}
+
+/* Safety Alert */
+.safety-alert {
+  -fx-background-color: #dc3545;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+/* Altitude Warning */
+.altitude-warning {
+  -fx-background-color: #ffc107;
+  -fx-text-fill: #212529;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 0, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-grid {
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+  }
+
+  .section-title {
+    -fx-font-size: 18px;
+  }
+
+  .dashboard-title {
+    -fx-font-size: 28px;
+  }
+}

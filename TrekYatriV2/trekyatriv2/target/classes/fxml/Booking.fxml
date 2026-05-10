@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trekyatri.controller.BookingController">
+
+    <VBox spacing="20.0" styleClass="main-content" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <!-- Festival Notification -->
+            <Label fx:id="festivalLabel" styleClass="festival-notification"
+                   text="🎉 Festival Discount Available!" visible="false" />
+
+            <!-- Booking Form Section -->
+            <VBox spacing="15.0" styleClass="form-section">
+                <children>
+                    <Label styleClass="section-title" text="Booking Information">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+
+                    <GridPane hgap="15.0" styleClass="form-grid" vgap="15.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <!-- Row 1 -->
+                            <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="form-label" text="Booking ID" />
+                                    <TextField fx:id="bookingIdField" styleClass="form-textfield" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="form-label" text="Tourist" />
+                                    <ComboBox fx:id="touristComboBox" maxWidth="1.7976931348623157E308"
+                                              styleClass="elegant-combo" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="form-label" text="Guide" />
+                                    <ComboBox fx:id="guideComboBox" maxWidth="1.7976931348623157E308"
+                                              styleClass="elegant-combo" />
+                                </children>
+                            </VBox>
+
+                            <!-- Row 2 -->
+                            <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <children>
+                                    <Label styleClass="form-label" text="Attraction" />
+                                    <ComboBox fx:id="attractionComboBox" maxWidth="1.7976931348623157E308"
+                                              styleClass="elegant-combo" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <children>
+                                    <Label styleClass="form-label" text="Trek Date" />
+                                    <DatePicker fx:id="trekDatePicker" maxWidth="1.7976931348623157E308"
+                                                styleClass="elegant-combo" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                <children>
+                                    <Label styleClass="form-label" text="Status" />
+                                    <ComboBox fx:id="statusComboBox" maxWidth="1.7976931348623157E308"
+                                              styleClass="elegant-combo" />
+                                </children>
+                            </VBox>
+
+                            <!-- Row 3 -->
+                            <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                <children>
+                                    <Label styleClass="form-label" text="Total Price ($)" />
+                                    <TextField fx:id="priceField" styleClass="form-textfield" editable="false" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <children>
+                                    <Label styleClass="form-label" text="Discount (%)" />
+                                    <TextField fx:id="discountField" styleClass="form-textfield"
+                                               onKeyReleased="#calculatePrice" />
+                                </children>
+                            </VBox>
+                        </children>
+                    </GridPane>
+
+                    <!-- Action Buttons -->
+                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                        <children>
+                            <Button fx:id="addButton" onAction="#onAddBooking" styleClass="primary-button" text="Add Booking" />
+                            <Button fx:id="updateButton" onAction="#onUpdateBooking" styleClass="secondary-button" text="Update Booking" />
+                            <Button fx:id="deleteButton" onAction="#onDeleteBooking" styleClass="danger-button" text="Delete Booking" />
+                            <Button fx:id="clearButton" onAction="#onClearFields" styleClass="neutral-button" text="Clear Fields" />
+                            <Button fx:id="emergencyButton" onAction="#onReportEmergency" styleClass="danger-button" text="Report Emergency" />
+                        </children>
+                    </HBox>
+                </children>
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+            </VBox>
+
+            <!-- Search Section -->
+            <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="search-section">
+                <children>
+                    <Label styleClass="form-label" text="Search:" />
+                    <TextField fx:id="searchField" onKeyReleased="#onSearchKeyReleased"
+                               promptText="Search by booking ID, tourist, guide, or attraction..."
+                               styleClass="search-textfield" HBox.hgrow="ALWAYS" />
+                </children>
+                <padding>
+                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </HBox>
+
+            <!-- Booking Table Section -->
+            <VBox spacing="10.0" styleClass="table-section" VBox.vgrow="ALWAYS">
+                <children>
+                    <Label styleClass="section-title" text="Booking List">
+                        <font>
+                            <Font name="System Bold" size="16.0" />
+                        </font>
+                    </Label>
+
+                    <TableView fx:id="bookingTable" styleClass="data-table" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="bookingIdColumn" prefWidth="100.0" text="Booking ID" />
+                            <TableColumn fx:id="touristColumn" prefWidth="120.0" text="Tourist" />
+                            <TableColumn fx:id="guideColumn" prefWidth="120.0" text="Guide" />
+                            <TableColumn fx:id="attractionColumn" prefWidth="150.0" text="Attraction" />
+                            <TableColumn fx:id="trekDateColumn" prefWidth="100.0" text="Trek Date" />
+                            <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
+                            <TableColumn fx:id="priceColumn" prefWidth="100.0" text="Price ($)" />
+                        </columns>
+                    </TableView>
+                </children>
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </VBox>
+        </children>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trekyatri.controller.TourController">
+
+    <VBox spacing="20.0" styleClass="main-content" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <!-- Header -->
+            <VBox alignment="CENTER" spacing="10.0">
+                <children>
+                    <Label styleClass="dashboard-title" text="TrekYatri">
+                        <font>
+                            <Font name="System Bold" size="32.0" />
+                        </font>
+                    </Label>
+                    <Label styleClass="dashboard-tagline" text="Tour Packages">
+                        <font>
+                            <Font name="System Bold" size="24.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+
+            <!-- Navigation Buttons -->
+            <HBox alignment="CENTER" spacing="15.0">
+                <children>
+                    <Button fx:id="dashboardButton" onAction="#onDashboardClicked"
+                            styleClass="secondary-button" text="Dashboard" />
+                    <Button fx:id="touristManagementButton" onAction="#onTouristManagementClicked"
+                            styleClass="secondary-button" text="Tourist Management" />
+                    <Button fx:id="guideManagementButton" onAction="#onGuideManagementClicked"
+                            styleClass="secondary-button" text="Guide Management" />
+                    <Button fx:id="attractionManagementButton" onAction="#onAttractionManagementClicked"
+                            styleClass="secondary-button" text="Attraction Management" />
+                    <Button fx:id="reportButton" onAction="#onReportClicked"
+                            styleClass="secondary-button" text="Report" />
+                </children>
+            </HBox>
+
+            <!-- Tour Packages Grid -->
+            <GridPane alignment="CENTER" hgap="30.0" vgap="30.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <!-- Annapurna Base Camp -->
+                    <VBox alignment="CENTER" spacing="15.0" styleClass="stat-card"
+                          GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <children>
+                            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                <!-- Placeholder for image -->
+                            </ImageView>
+                            <Label styleClass="section-title" text="Annapurna Base Camp">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label text="Experience the stunning Annapurna Sanctuary"
+                                   textAlignment="CENTER" wrapText="true" />
+                            <Label text="Duration: 12-14 days | Difficulty: Moderate"
+                                   styleClass="stat-label" />
+                            <Button fx:id="annapurnaButton" onAction="#onAnnapurnaExplore"
+                                    styleClass="primary-button" text="Explore Now" />
+                        </children>
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                    </VBox>
+
+                    <!-- Langtang Valley -->
+                    <VBox alignment="CENTER" spacing="15.0" styleClass="stat-card"
+                          GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <children>
+                            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                <!-- Placeholder for image -->
+                            </ImageView>
+                            <Label styleClass="section-title" text="Langtang Valley">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label text="Discover the beautiful Valley of Glaciers"
+                                   textAlignment="CENTER" wrapText="true" />
+                            <Label text="Duration: 7-10 days | Difficulty: Easy-Moderate"
+                                   styleClass="stat-label" />
+                            <Button fx:id="langtangButton" onAction="#onLangtangExplore"
+                                    styleClass="primary-button" text="Explore Now" />
+                        </children>
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                    </VBox>
+
+                    <!-- Everest Base Camp -->
+                    <VBox alignment="CENTER" spacing="15.0" styleClass="stat-card"
+                          GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <children>
+                            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                <!-- Placeholder for image -->
+                            </ImageView>
+                            <Label styleClass="section-title" text="Everest Base Camp">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                            </Label>
+                            <Label text="Journey to the base of world's highest mountain"
+                                   textAlignment="CENTER" wrapText="true" />
+                            <Label text="Duration: 14-16 days | Difficulty: Challenging"
+                                   styleClass="stat-label" />
+                            <Button fx:id="everestButton" onAction="#onEverestExplore"
+                                    styleClass="primary-button" text="Explore Now" />
+                        </children>
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                        </padding>
+                    </VBox>
+                </children>
+            </GridPane>
+
+            <!-- Footer -->
+            <VBox alignment="CENTER" spacing="10.0">
+                <children>
+                    <Separator />
+                    <Label text="🏔️ Discover the Beauty of Nepal 🏔️" styleClass="dashboard-tagline">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+        </children>
+        <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+        </padding>
+    </VBox>
+</AnchorPane>

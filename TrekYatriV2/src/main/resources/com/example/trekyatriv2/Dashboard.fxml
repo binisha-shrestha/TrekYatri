@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.trekyatri.Dashboard">
+
+    <children>
+
+        <!-- 🌄 Background Image -->
+        <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="0" layoutY="0" opacity="0.3" preserveRatio="false">
+            <image>
+                <Image url="file:/C:/Users/Acer/IdeaProjects/TrekYatri/src/main/resources/mountain.jpeg" />
+            </image>
+        </ImageView>
+
+        <!-- 🏷️ TrekYatri Title -->
+        <Label layoutX="240.0" layoutY="25.0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2E4053;" text="TrekYatri" />
+
+        <!-- 🧭 Tagline -->
+        <Label layoutX="122.0" layoutY="80.0" style="-fx-font-size: 14px; -fx-text-fill: #34495E;" text="From footsteps to summits — TrekYatri leads the way" />
+
+        <!-- 🧭 Navigation Buttons -->
+        <VBox layoutX="200.0" layoutY="120.0" spacing="15" />
+          <Button layoutX="200.0" layoutY="252.0" onAction="#goToPackages" prefWidth="200" fx:id="Tour_Packages" text="Tour Packages" />
+          <Button layoutX="200.0" layoutY="211.0" onAction="#goToGuides" prefWidth="200" text="Guide Management" />
+          <Button layoutX="200.0" layoutY="166.0" onAction="#goToTourists" prefWidth="200" text="Tourist Management" />
+          <Button layoutX="200.0" layoutY="127.0" onAction="#goToAttractions" prefWidth="200" text="Attraction Management" />
+      <Button layoutX="200.0" layoutY="299.0" onAction="#goToPackages" prefWidth="200" text="Booking" />
+
+    </children>
+</AnchorPane>

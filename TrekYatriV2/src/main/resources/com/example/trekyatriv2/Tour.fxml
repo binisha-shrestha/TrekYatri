@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trekyatri.controller.TourController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="85.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Downloads/AnnapurnaCamp.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="682.0" layoutY="362.0" text="EverestBaseCamp" />
+      <Label layoutX="125.0" layoutY="362.0" text="Annapurna Base Camp" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="362.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Downloads/mountain.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="437.0" layoutY="362.0" text="Langtang" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="620.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="641.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Downloads/everest.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="383.0" layoutY="51.0" text="Tours Packages">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Button layoutX="131.0" layoutY="440.0" mnemonicParsing="false" text="Explore Now" />
+      <Button layoutX="420.0" layoutY="440.0" mnemonicParsing="false" text="Explore Now" />
+      <Button layoutX="687.0" layoutY="440.0" mnemonicParsing="false" text="Explore Now" />
+      <Label layoutX="427.0" layoutY="24.0" text="TrekYatri">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="256.0" layoutY="107.0" mnemonicParsing="false" text="TouristManagment" />
+      <Button layoutX="406.0" layoutY="107.0" mnemonicParsing="false" text="GuideManagment" />
+      <Button layoutX="562.0" layoutY="107.0" mnemonicParsing="false" text="AttractionManagment" />
+      <Button layoutX="715.0" layoutY="107.0" mnemonicParsing="false" text="Report" />
+      <Button layoutX="136.0" layoutY="107.0" mnemonicParsing="false" text="Dashboard" />
+   </children>
+</AnchorPane>
