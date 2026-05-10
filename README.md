@@ -1,2 +1,10 @@
 # TrekYatri
-TrekYatri provides tourist managment,booking , attraction management, guide and booking management with report ,dashboard and login.
+TrekYatri provides- 
+1.Tourist managment
+2.Booking 
+3.Attraction management
+4.Guide management
+5.Booking management
+6.Report 
+7.Dashboard  
+8.Login
